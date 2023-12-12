@@ -1,0 +1,21 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: anikin.rememberthesitemap::lang.item.definition
+
+# Model Form Field configuration
+form: $/anikin/rememberthesitemap/models/definition/fields.yaml
+
+# Model Class name
+modelClass: ANIKIN\RememberTheSitemap\Models\Definition
+
+# Default redirect location
+defaultRedirect: system/settings
+
+# Update page
+update:
+    title: anikin.rememberthesitemap::lang.plugin.name
+    redirect: anikin/rememberthesitemap/definitions
+    redirectClose: system/settings

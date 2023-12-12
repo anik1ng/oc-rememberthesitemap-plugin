@@ -1,0 +1,58 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    type:
+        label: anikin.rememberthesitemap::lang.item.type
+        type: dropdown
+
+    url:
+        label: anikin.rememberthesitemap::lang.item.url
+
+    reference:
+        label: anikin.rememberthesitemap::lang.item.reference
+        type: dropdown
+        cssClass: input-sidebar-control
+
+    cmsPage:
+        label: anikin.rememberthesitemap::lang.item.cms_page
+        comment: anikin.rememberthesitemap::lang.item.cms_page_comment
+        type: dropdown
+        cssClass: input-sidebar-control
+
+    nesting:
+        label: anikin.rememberthesitemap::lang.item.allow_nested_items
+        comment: anikin.rememberthesitemap::lang.item.allow_nested_items_comment
+        type: checkbox
+        default: true
+
+    priority:
+        span: left
+        label: anikin.rememberthesitemap::lang.item.priority
+        type: dropdown
+        options:
+            '0.1': '0.1'
+            '0.2': '0.2'
+            '0.3': '0.3'
+            '0.4': '0.4'
+            '0.5': '0.5'
+            '0.6': '0.6'
+            '0.7': '0.7'
+            '0.8': '0.8'
+            '0.9': '0.9'
+            '1.0': '1.0'
+
+    changefreq:
+        span: right
+        label: anikin.rememberthesitemap::lang.item.changefreq
+        type: dropdown
+        options:
+            always: anikin.rememberthesitemap::lang.item.always
+            hourly: anikin.rememberthesitemap::lang.item.hourly
+            daily: anikin.rememberthesitemap::lang.item.daily
+            weekly: anikin.rememberthesitemap::lang.item.weekly
+            monthly: anikin.rememberthesitemap::lang.item.monthly
+            yearly: anikin.rememberthesitemap::lang.item.yearly
+            never: anikin.rememberthesitemap::lang.item.never

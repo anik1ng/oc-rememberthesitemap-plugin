@@ -1,0 +1,17 @@
+{
+  "name": "anikin/oc-rememberthesitemap-plugin",
+  "type": "october-plugin",
+  "description": "Sitemap for October CMS v3",
+  "keywords": [
+    "october",
+    "cms",
+    "sitemap",
+    "plugin"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Constantine Anikin",
+      "email": "mail@anikin.pro"
+    },
+}
