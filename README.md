@@ -61,7 +61,7 @@ Event::listen('anikin.rememberthesitemap.resolveItem', function ($type, $item, $
  * $theme — variable from Event listener.
  * $model — your single model.
  */
-class RainLabBlogItems
+class ProductsItems
 {
     use \ANIKIN\RememberTheSitemap\Classes\Traits\SitemapHelper;
     
