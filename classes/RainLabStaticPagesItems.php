@@ -5,7 +5,6 @@ use Site;
 use Cms\Classes\Theme;
 use RainLab\Pages\Classes\Page as StaticPage;
 use RainLab\Pages\Classes\PageList;
-use RainLab\Translate\Classes\Translator;
 
 class RainLabStaticPagesItems
 {
@@ -134,11 +133,18 @@ class RainLabStaticPagesItems
         return ['items' => $result];
     }
 
-    protected static function getPageUrl(Theme $theme, string $itemName, array $itemInfo, string $locale): string
+    protected static function getPageUrl(Theme $theme, string $itemName, array $itemInfo, string|null $locale = null): string
     {
         $staticPage = StaticPage::loadCached($theme, $itemName);
 
-        return \Cms::url(Translator::instance()->getPathInLocale(array_get($staticPage->viewBag, "localeUrl.{$locale}", $itemInfo['url']), $locale));
+        if (class_exists('RainLab\Translate\Classes\Translator') && $locale) {
+            return \Cms::url(\RainLab\Translate\Classes\Translator::instance()
+                ->getPathInLocale(array_get(
+                    $staticPage->viewBag, "localeUrl.{$locale}", $itemInfo['url']
+                ), $locale));
+        } else {
+            return \Cms::url($itemInfo['url']);
+        }
     }
 
     protected static function getAlternateUrls(Theme $theme, string $itemName, array $itemInfo, Collection $sites): array
@@ -146,8 +152,10 @@ class RainLabStaticPagesItems
         $alternateUrls = [];
 
         foreach ($sites as $site) {
-            $pageUrl = self::getPageUrl($theme, $itemName, $itemInfo, $site->locale);
-            $alternateUrls[$site->locale] = $pageUrl;
+            if ( ! empty($site->locale)) {
+                $pageUrl = self::getPageUrl($theme, $itemName, $itemInfo, $site->locale);
+                $alternateUrls[$site->locale] = $pageUrl;
+            }
         }
 
         return $alternateUrls;
