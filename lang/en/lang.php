@@ -44,6 +44,7 @@ return [
         'empty_confirm' => 'Empty this definition?'
     ],
     'definition' => [
+        'theme_not_found' => 'Active theme not found',
         'not_found' => 'No sitemap definition was found. Try creating one first.'
     ],
     'types' => [
